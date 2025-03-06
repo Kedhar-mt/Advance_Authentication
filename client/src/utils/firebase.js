@@ -1,29 +1,21 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC3nhlcIxh1pJhICPXCEA8FVkjHpAVeq1I",
-  authDomain: "advance-auth-583fc.firebaseapp.com",
-  projectId: "advance-auth-583fc",
-  storageBucket: "advance-auth-583fc.appspot.com", // Fixed storage bucket URL
-  messagingSenderId: "709750852415",
-  appId: "1:709750852415:web:0ead9edf83b1867432218a"
+  apiKey: "AIzaSyAqdhopxZ6-BoUcOKCufZWm8TeWprHFFUE",
+  authDomain: "finalauth-4c595.firebaseapp.com",
+  projectId: "finalauth-4c595",
+  storageBucket: "finalauth-4c595.firebasestorage.app",
+  messagingSenderId: "794332215499",
+  appId: "1:794332215499:web:ec1a69fadfe899e6a8434e",
+  measurementId: "G-38GDL0LTWQ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
-
-// Add these scopes to request more user information
-googleProvider.addScope('profile');
-googleProvider.addScope('email');
-
-// Configure custom parameters for the auth provider
-googleProvider.setCustomParameters({
-  prompt: 'select_account'
-});
-
-export { auth, googleProvider };
+const analytics = getAnalytics(app);
